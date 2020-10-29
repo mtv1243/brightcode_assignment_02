@@ -7,7 +7,7 @@ app.use(cors())
 
 let quizObj = {
   totalQuestions: 4,
-  successMessage: "Congratulation!",
+  successMessage: "Congratulations!",
   questionArr: [
     {
       id:0,

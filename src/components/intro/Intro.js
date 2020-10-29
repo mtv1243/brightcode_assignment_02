@@ -3,7 +3,7 @@ import Button from '../button/Button';
 
 import './Styles.scss';
 
-const Intro = ({gameStatus, setGameStatus}) => {
+const Intro = ({gameStatus, setGameStatus, totalQuestions, numOfClicks, setNumOfClicks}) => {
 
     return (
         <div className="introContainer">
@@ -13,7 +13,13 @@ const Intro = ({gameStatus, setGameStatus}) => {
                 <div className="introContainer--message">
                     {gameStatus.message}
                 </div>
-                <Button label="start" handleSubmit={()=> setGameStatus({loadIntro: false})} />
+                <Button label="start" handleSubmit={()=> {
+                    setGameStatus({loadIntro: false});
+                    setNumOfClicks(numOfClicks + 1);
+                    if(gameStatus.message === "Great Job! Play again.") {
+                        setNumOfClicks(1);
+                    }
+                }} />
         </div>
     )
 }

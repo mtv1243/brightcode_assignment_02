@@ -3,6 +3,20 @@
 @import '../../styles/utils/breakpoints';
 
 .learningModule {
+    &--progressBar {
+        width: 100%;
+        overflow: hidden;
+        background-color: #dcc4ff;
+        &--section {
+            color: white;
+            box-sizing: border-box;
+            padding-left: 1em;
+            height: 1.5em;
+            background-color: #9B53FD;
+            transition: width .5s ease-in-out;
+        }
+    }
+
     &--header {
         text-align: center;
     }
